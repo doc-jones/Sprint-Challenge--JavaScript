@@ -16,9 +16,9 @@ const tyrannosaurus = {
 	weight: "7000kg",
 	length: "12m",
   period: "Cretaceious",
-  roar: function() {
-    return "RAWERSRARARWERSARARARRRR!";
-  }
+//   roar: function() {
+//     return "RAWERSRARARWERSARARARRRR!";
+//   }
 }
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -105,8 +105,8 @@ for (let i = 0; i < graduates.length; i++) {
     uni.push(graduates[i]);
   }
 }
-console.log("This is a list of all the universities attended by graduates with the string 'Uni' included in their name: " + JSON.stringify(uni));
 
+console.log("This is a list of all the universities attended by graduates with the string 'Uni' included in their name: " + JSON.stringify(uni));
 
 // ==== ADVANCED Array Methods ====
 
