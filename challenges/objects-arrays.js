@@ -129,8 +129,7 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = [];
-let speciesNames = zooAnimals.forEach(function(i){
+const animalNames = zooAnimals.forEach(function(i){
   animalNames.push(i.scientific_name + " " + i.animal_name);
 });
 
@@ -143,9 +142,8 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
-zooAnimals.map((animal) => {
-  return animal.animal_name.toLowerCase();
+const lowerCase = zooAnimals.map((animal_name) => {
+  return animal_name.toLowerCase();
 });
 console.log(lowerCase);
 
@@ -154,11 +152,11 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
-let lowPopulation = zooAnimals.filter((population) => {
-  return population <= 5;
+const largerPopulation = zooAnimals.filter((animal_name) => {
+  return animal_name.population < 5;
 });
 console.log(largerPopulation);
+
 
 /* Request 4: .reduce() 
 
@@ -166,7 +164,7 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 const populationTotal = 0;
-let animalPopUS = zooAnimals.reduce((populationTotal, donationAmount) => {
+let animalPopUS = zooAnimals.reduce((populationTotal, populationAmount) => {
   return populationTotal + populationAmount.population;
 }, 0);
 console.log(animalPopUS);
@@ -177,5 +175,6 @@ console.log(populationTotal);
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
+Done above 
 */
 
