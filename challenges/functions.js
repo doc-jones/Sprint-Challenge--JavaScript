@@ -25,7 +25,7 @@
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation:  When function "myFunction()" gets called an execution context is created which creates the variable internal and the function "nestedfunction()". When "nestedfunction()" gets called it's able to access the variable "internal" because of lexical scope.
 
 
 const external = "I'm outside the function";

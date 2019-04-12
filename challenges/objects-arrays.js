@@ -15,7 +15,10 @@ const tyrannosaurus = {
 	diet: "carnivorious",
 	weight: "7000kg",
 	length: "12m",
-	period: "Cretaceious"
+  period: "Cretaceious",
+  roar: function() {
+    return "RAWERSRARARWERSARARARRRR!";
+  }
 }
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -54,12 +57,7 @@ console.log(tyrannosaurus.period);
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
 
-// console.log(tyrannosaurus.roar());
-
-// roar(name) {
-//   return "RAWERSRARARWERSARARARRRR!";
-// }
-
+  console.log(tyrannosaurus.roar);
 
 
 
@@ -82,7 +80,11 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-console.log(universities)
+for (let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+}
+console.log(univeristies.sort());
+// console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -90,12 +92,21 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
-console.log(contactInfo);
+const contactInfo = []; 
+for (let i = 0; i < graduates.length; i++) {
+  first_name.push(graduates[i].first_name);
+}
+console.log(first_name);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+for (let i = 0; i < graduates.length; i++) {
+  if (graduates[i].university == "Uni") {
+    uni.push(graduates[i]);
+  }
+}
+// console.log("This is a list of all the universities attended by graduates with the string 'Uni' included in their name: " + JSON.stringify(uni));
 console.log(uni);
 
 
@@ -121,6 +132,10 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+zooAnimals.forEach(function(i){
+  animalNames.push(i.scientific_name + " " + i.animal_name);
+});
+
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -130,7 +145,10 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
-console.log(lowerCase); 
+zooAnimals.map((animal) => {
+  return animal.animal_name.toLowerCase();
+});
+console.log(lowerCase);
 
 /* Request 3: .filter() 
 
@@ -138,6 +156,9 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const largerPopulation = [];
+let lowPopulation = zooAnimals.filter((population) => {
+  return population <= 5;
+});
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -146,6 +167,10 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 const populationTotal = 0;
+let animalPopUS = zooAnimals.reduce((populationTotal, donationAmount) => {
+  return populationTotal + populationAmount.population;
+}, 0);
+console.log(animalPopUS);
 console.log(populationTotal);
 
 
